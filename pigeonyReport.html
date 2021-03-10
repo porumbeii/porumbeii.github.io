@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Phoenix Base</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h1>Verifică un site dacă are pericole!</h1>
+    <input id="input" value="site.com">
+    <button onclick="check();">Verifică!</button>
+    <p id="result"></p>
+    <script>var dataBase = {
+        "porumbeii.fun" : "Sigur, http",
+        "google.com" : "Sigur, https",
+        "w3scools.com" : "Periculos, http",
+        "goggle.com" : "Periculos, https",
+            "wordwall.com" : "De vânzare, https"
+        };
+
+function check() {
+  let input = document.getElementById("input").value;
+  let result = "";
+
+  if (dataBase[input] === undefined)
+    result = "Site neverificat";
+  
+  else result = dataBase[input];
+  
+  document.getElementById("result").innerText = result;
+}</script></body>
