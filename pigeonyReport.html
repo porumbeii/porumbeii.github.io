@@ -28,15 +28,21 @@
         "tiktok.com" : "Sigur, nerecomandat, https",
         "instagramcom" : "Sigur, pentru adulți, https",
         "steam.com" : "Sigur, se recomandă dacă un copil îl accesează, să fie sub supravegherea suprevegherea unui adult, deoarece anumite jocuri conțin conținut neadecvat",
-        "apple.com" : "Certificat phoenix, https"
+        "apple.com" : "Certificat phoenix, https",
+        "stackoverflow.com" : "Sigur, https",
+        "site.com" : "Existent, dar fără nici o dovadă că e sigur",
+        "dell.com" : "Certificat phoenix, https",
+        "usborne.com" : "Certificat phoenix, https",
+        "lenovo.com" : "Sigur, https",
+        "visualstudio.com" : "Sigur, https"
         };
 
 function check() {
-  let input = document.getElementById("input").value;
+  let input = document.getElementById("input").value.toLowerCase().replace("https://", "").replace("http://", "").replace("www.", "");
   let result = "";
 
   if (dataBase[input] === undefined)
-    result = "Site neverificat";
+    result = "Site-ul acesta nu a fost înregistrat sau nu există.";
   
   else result = dataBase[input];
   
